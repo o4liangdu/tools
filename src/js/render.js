@@ -1,1 +1,2 @@
-console.log(111)
+console.log(window.api);
+window.api.saveFile();

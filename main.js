@@ -1,4 +1,4 @@
-const { BrowserWindow, app } = require("electron");
+const { BrowserWindow, app, ipcMain } = require("electron");
 const path = require('path')
 
 const createWindow = () => {
@@ -10,7 +10,12 @@ const createWindow = () => {
         frame: false,
         transparent: true,
         alwaysOnTop: true,
+        webPreferences: {
+            preload: path.resolve(__dirname, 'preload.js'),
+            nodeIntegration: true
+        }
     })
+    mainWindow.webContents.openDevTools();
     mainWindow.setAspectRatio(1)
     mainWindow.loadFile(path.resolve(__dirname, 'src/index.html'))
     app.requestSingleInstanceLock();
@@ -30,4 +35,8 @@ app.on('window-all-closed', () => {
 
 app.on('activate', ()=>{
     if(!app.hasSingleInstanceLock()) createWindow();
+})
+
+ipcMain.on('saveFile', () => {
+    console.log('save file')
 })
