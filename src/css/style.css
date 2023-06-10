@@ -5,18 +5,27 @@
 body {
     width: 100vw;
     height: 100vh;
+    position: relative;
 }
 
-html {
+/* html {
     -webkit-app-region: drag;
 }
 textarea {
     -webkit-app-region: no-drag;
-}
+} */
 .camera-wrapper {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     background-color: rgb(239, 188, 125);
     overflow: hidden;
+    text-align: center;
+}
+.btn-save {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
 }
