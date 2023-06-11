@@ -47,3 +47,7 @@ ipcMain.handle('selectFile', async e => {
     const fileObj = await dialog.showOpenDialog()
     console.log(fileObj)
 })
+
+ipcMain.handle('close', e => {
+    app.quit();
+})

@@ -16,6 +16,7 @@ const { ipcRenderer } = require("electron");
 // ipcRenderer.send('saveFile')
 
 contextBridge.exposeInMainWorld('api', {
+    close: () => ipcRenderer.invoke('close'),
     saveFile: () => ipcRenderer.send('saveFile'),
     addValue: (cb) => {
         ipcRenderer.on('add', (event, num = 1) => {

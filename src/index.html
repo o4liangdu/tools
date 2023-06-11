@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src *; style-src 'self'" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>liangdo's tools</title>
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <div class="camera-wrapper">
-        are you ok???
-    </div>
-    <button class="btn-save">save</button>
+    <video class="camera-wrapper"></video>
+    <canvas class="canvas-wrapper" width="300" height="300"></canvas>
+    <button class="btn-close">x</button>
+    <button class="btn-rotate">90</button>
+    <button class="btn-bg">bg</button>
+    <button class="btn-drag">drag</button>
     <script src="js/render.js"></script>
+    <script src="./assets/tf.es2017.min.js"></script>
+    <script src="./assets/body-pix.js"></script>
 </body>
 </html>
